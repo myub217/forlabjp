@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "Welcome to JP Visual & Docs",
+    "subtitle": "Professional Business & Document Services",
+    "description": "We specialize in making gray area businesses appear professional and standardized. Our services include loan planning, visa assistance, document handling, design, and more.",
+    "cta": {
+      "text": "Get Started",
+      "link": "#contact"
+    }
+  },
+  "services": [
+    {
+      "name": "Loan Planning",
+      "description": "We help you prepare your loan application with a clear, professional approach tailored to your needs. Whether for business or personal loans, we ensure you present your best profile to banks."
+    },
+    {
+      "name": "Visa Document Handling",
+      "description": "Our expert team assists in preparing the necessary documents for visa applications. Whether you're applying for tourist, business, or spouse visas, we've got you covered."
+    },
+    {
+      "name": "Document Creation & Modification",
+      "description": "We offer document modification, creation, and sourcing services to ensure your documents are professionally crafted and legally valid."
+    },
+    {
+      "name": "Design Services",
+      "description": "From logos and banners to business cards and more, our design services help create an identity that fits your business’s vision and needs."
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Loan Application Success Stories",
+      "image": "path/to/image1.jpg",
+      "description": "Our team has helped countless clients successfully secure loans through personalized planning and strategic document presentation."
+    },
+    {
+      "title": "Visa Success Stories",
+      "image": "path/to/image2.jpg",
+      "description": "Our expertise in handling visa documents has led to successful approvals for numerous clients around the world."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "position": "Entrepreneur",
+      "feedback": "JP Visual & Docs helped me prepare my business loan application in no time, and the results were fantastic. Highly recommend!"
+    },
+    {
+      "name": "Jane Smith",
+      "position": "Freelancer",
+      "feedback": "I needed urgent visa documentation, and JP Visual & Docs delivered exactly what I needed. Great service and professional attitude."
+    }
+  ],
+  "contact": {
+    "phone": "+1234567890",
+    "email": "contact@jpvisualdocs.com",
+    "address": "123 Business Rd, City, Country"
+  }
+}
