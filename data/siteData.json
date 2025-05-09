@@ -1,18 +1,85 @@
-{
-  "hero": {
-    "title": "JP Visual & Docs",
-    "subtitle": "ยกระดับธุรกิจสีเทาให้ดูโปร"
-  },
-  "services": [
-    {
-      "id": 1,
-      "name": "วางแผนยื่นกู้สินเชื่อ",
-      "price": "เริ่มต้น 4,000 – 300,000 บาท"
-    },
-    {
-      "id": 2,
-      "name": "ดูแลเอกสารยื่นวีซ่า",
-      "price": "เริ่มต้น 4,000 บาท"
-    }
-  ]
+import React, { useState, useEffect } from 'react';
+
+export default function HomePage() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/siteData.json')
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error('Failed to load data:', error));
+  }, []);
+
+  if (!data) return <div className="text-center p-10">Loading...</div>;
+
+  return (
+    <main className="max-w-5xl mx-auto px-4 py-10 space-y-12">
+      {/* Hero Section */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">{data.hero?.title}</h1>
+        <p className="text-xl text-gray-600">{data.hero?.subtitle}</p>
+        <p className="text-md">{data.hero?.description}</p>
+        <a href={data.hero?.cta?.link}>
+          <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            {data.hero?.cta?.text}
+          </button>
+        </a>
+      </section>
+
+      {/* Services */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Services</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {data.services?.map((service, index) => (
+            <div key={index} className="p-4 border rounded-lg shadow-sm">
+              <h3 className="text-lg font-medium">{service.name}</h3>
+              <p className="text-gray-700">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Portfolio</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {data.portfolio?.map((item, index) => (
+            <div key={index} className="space-y-2">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full rounded border"
+              />
+              <h3 className="font-medium">{item.title}</h3>
+              <p className="text-gray-700">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Testimonials</h2>
+        <div className="space-y-6">
+          {data.testimonials?.map((testimonial, index) => (
+            <div key={index} className="bg-gray-100 p-4 rounded shadow">
+              <h3 className="font-semibold">{testimonial.name}</h3>
+              <p className="text-sm text-gray-500">{testimonial.position}</p>
+              <p className="mt-2">{testimonial.feedback}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+        <div className="space-y-2">
+          <p><strong>Phone:</strong> {data.contact?.phone}</p>
+          <p><strong>Email:</strong> {data.contact?.email}</p>
+          <p><strong>Address:</strong> {data.contact?.address}</p>
+        </div>
+      </section>
+    </main>
+  );
 }
