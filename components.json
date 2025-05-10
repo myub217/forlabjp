@@ -17,5 +17,55 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "iconLibrary": "lucide"
+  "iconLibrary": "lucide",
+  "plugins": [
+    "@tailwindcss/forms",
+    "@tailwindcss/typography",
+    "@tailwindcss/aspect-ratio"
+  ],
+  "theme": {
+    "extend": {
+      "fontFamily": {
+        "sans": ["Inter", "sans-serif"]
+      },
+      "colors": {
+        "primary": {
+          "DEFAULT": "#0f172a",
+          "foreground": "#ffffff"
+        },
+        "secondary": {
+          "DEFAULT": "#64748b",
+          "foreground": "#f1f5f9"
+        },
+        "accent": {
+          "DEFAULT": "#14b8a6",
+          "foreground": "#ffffff"
+        },
+        "muted": {
+          "DEFAULT": "#f8fafc",
+          "foreground": "#475569"
+        },
+        "background": {
+          "light": "#ffffff",
+          "dark": "#0f172a"
+        },
+        "border": {
+          "DEFAULT": "#e2e8f0"
+        },
+        "card": {
+          "DEFAULT": "#ffffff",
+          "foreground": "#0f172a"
+        },
+        "popover": {
+          "DEFAULT": "#ffffff",
+          "foreground": "#0f172a"
+        },
+        "destructive": {
+          "DEFAULT": "#ef4444",
+          "foreground": "#ffffff"
+        }
+      }
+    }
+  },
+  "siteData": "https://raw.githubusercontent.com/myub217/forlabjp/main/data/siteData.json"
 }
