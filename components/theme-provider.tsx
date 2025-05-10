@@ -1,16 +1,11 @@
-import { useTheme } from 'next-themes'
+'use client'
 
-const ThemeToggleButton = () => {
-  const { theme, setTheme } = useTheme()
+import * as React from 'react'
+import {
+  ThemeProvider as NextThemesProvider,
+  type ThemeProviderProps,
+} from 'next-themes'
 
-  return (
-    <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
-    >
-      Toggle {theme === 'dark' ? 'Light' : 'Dark'} Mode
-    </button>
-  )
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
-
-export default ThemeToggleButton
